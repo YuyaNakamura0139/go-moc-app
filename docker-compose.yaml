@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  go-moc-app:
+    container_name: go-app-server
+    volumes:
+      - .:/go/src/work
+    working_dir: /go/src/work
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
